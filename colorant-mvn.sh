@@ -58,6 +58,6 @@ addRegexp "[Ff]ail\(ures\{0,1\}\)\{0,1\} " "$RED"
 # Yellow warn, warning, warnings
 addRegexp "[Ww]arn\(ings\{0,1\}\)\{0,1\}" "$YELLOW"
 
-mvn $@ | sed -e "$REGEXP"
+mvn "$@" | sed -e "$REGEXP"
 
 exit ${PIPESTATUS[0]}
