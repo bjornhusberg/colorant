@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Prettify mvn output
+#
+# Author: Björn Husberg (bjorn@husberg.se)
+# https://github.com/bjornhusberg/colorant
+
 # Ansi colors
 RESET=$(echo -en "\033[0m")
 BOLD=$(echo -en "\033[1m")
