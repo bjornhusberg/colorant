@@ -5,6 +5,11 @@
 # Author: Björn Husberg (bjorn@husberg.se)
 # https://github.com/bjornhusberg/colorant
 
+if [ -z "$ANT_HOME" ]; then
+  echo "Please set the ANT_HOME variable"
+  exit 1
+fi
+
 # Ansi colors
 RESET=$(echo -en "\033[0m")
 BOLD=$(echo -en "\033[1m")
@@ -60,6 +65,6 @@ addRegexp "[Ff]ail\(ures\{0,1\}\)\{0,1\}" "$RED"
 # Yellow warn, warning, warnings
 addRegexp "[Ww]arn\(ings\{0,1\}\)\{0,1\}" "$YELLOW"
 
-ant $@ | sed -e "$REGEXP"
+"$ANT_HOME/bin/ant" "$@" | sed -e "$REGEXP"
 
 exit ${PIPESTATUS[0]} 

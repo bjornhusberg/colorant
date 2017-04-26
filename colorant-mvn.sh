@@ -5,6 +5,11 @@
 # Author: Björn Husberg (bjorn@husberg.se)
 # https://github.com/bjornhusberg/colorant
 
+if [ -z "$M2_HOME" ];
+  echo "Please set the M2_HOME variable"
+  exit
+fi
+
 # Ansi colors
 RESET=$(echo -en "\033[0m")
 BOLD=$(echo -en "\033[1m")
@@ -63,6 +68,6 @@ addRegexp "[Ff]ail\(ures\{0,1\}\)\{0,1\} " "$RED"
 # Yellow warn, warning, warnings
 addRegexp "[Ww]arn\(ings\{0,1\}\)\{0,1\}" "$YELLOW"
 
-mvn "$@" | sed -e "$REGEXP"
+"$M2_HOME/bin/mvn" "$@" | sed -e "$REGEXP"
 
 exit ${PIPESTATUS[0]}
