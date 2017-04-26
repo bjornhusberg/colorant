@@ -5,7 +5,7 @@
 # Author: Björn Husberg (bjorn@husberg.se)
 # https://github.com/bjornhusberg/colorant
 
-if [ -z "$M2_HOME" ];
+if [ -z "$M2_HOME" ]; then
   echo "Please set the M2_HOME variable"
   exit
 fi
