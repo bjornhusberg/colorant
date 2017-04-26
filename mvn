@@ -42,7 +42,7 @@ addRegexp "WARNING" "$YELLOW"
 addRegexp "BUILD SUCCESS\(FUL\)\{0,1\}" "$GREEN"
 
 # Red build failures
-addRegexp "BUILD FAILURE\{0,1\}" "$RED"
+addRegexp "BUILD FAILURES\{0,1\}" "$RED"
 
 # Bold hosts
 addRegexp "https\{0,1\}:\/" "$BOLD"
@@ -60,10 +60,7 @@ addRegexp "\([[:lower:]][[:alnum:]]*\.\)*[[:alpha:]]*[[:alnum:]]*Exception" "$RE
 addRegexp "[Ee]rrors\{0,1\}" "$RED"
 
 # Red failed
-addRegexp "[Ff]ailed" "$RED"
-
-# Red fail, failure, failures
-addRegexp "[Ff]ail\(ures\{0,1\}\)\{0,1\} " "$RED"
+addRegexp "[Ff]ail\(ed\)\{0,1\}\(ures\{0,1\}\)\{0,1\}" "$RED"
 
 # Yellow warn, warning, warnings
 addRegexp "[Ww]arn\(ings\{0,1\}\)\{0,1\}" "$YELLOW"
